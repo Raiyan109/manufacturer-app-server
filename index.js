@@ -5,6 +5,7 @@ require('dotenv').config()
 const partRoutes = require('./routes/parts.js')
 const reviewRoutes = require('./routes/reviews.js')
 const testimonialRoutes = require('./routes/testimonials.js')
+const userRoutes = require('./routes/users.js')
 
 const app = express()
 
@@ -14,6 +15,7 @@ app.use(cors())
 app.use('/api/parts', partRoutes)
 app.use('/api/reviews', reviewRoutes)
 app.use('/api/testimonials', testimonialRoutes)
+app.use('/api/users', userRoutes)
 
 mongoose.set("strictQuery", false);
 mongoose.connect(process.env.MONGO_URI)
