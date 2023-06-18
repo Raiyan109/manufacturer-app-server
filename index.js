@@ -4,6 +4,7 @@ const cors = require('cors');
 require('dotenv').config()
 
 const step1Routes = require('./routes/step1.js')
+const step2Routes = require('./routes/step2.js')
 
 
 const app = express()
@@ -13,6 +14,7 @@ app.use(cors())
 
 
 app.use('/api/step1', step1Routes)
+app.use('/api/step2', step2Routes)
 
 
 mongoose.set("strictQuery", false);
